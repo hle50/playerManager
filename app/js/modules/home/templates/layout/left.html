@@ -1,0 +1,15 @@
+<div ng-controller='leftCtrl'>
+	<div class="page-header">
+		<h2 class="text-center">Manchester United</h1>
+	</div>
+	<div ng-if='isLoading'>
+		<img src="./img/loading.gif" />
+	</div>
+	<div ng-repeat="player in players" class="listPlayer">
+		<div ng-click="getDetail(player)" ng-bind="player.name" class="playerName"></div>
+		<div>
+			<span ng-bind="player.marketValue" class="playerValue"></span>
+			<span class="glyphicon glyphicon-eye-open pull-right gly-color" aria-hidden="true"></span>
+		</div>
+	</div>
+</div>

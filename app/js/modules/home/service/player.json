@@ -1,0 +1,75 @@
+{
+	"count": 25,
+	"players": [
+		{
+			"id": 16,
+			"name": "Bastian Schweinsteiger",
+			"position": "Central Midfield",
+			"jerseyNumber": 31,
+			"dateOfBirth": "1984-08-01",
+			"nationality": "Germany",
+			"contractUntil": "2018-06-30",
+			"marketValue": "22,000,000 €"
+        },
+		{
+			"id": 409,
+			"name": "David de Gea",
+			"position": "Keeper",
+			"jerseyNumber": 1,
+			"dateOfBirth": "1990-11-07",
+			"nationality": "Spain",
+			"contractUntil": "2016-06-30",
+			"marketValue": "30,000,000 €"
+        },
+		{
+			"id": 412,
+			"name": "Phil Jones",
+			"position": "Centre Back",
+			"jerseyNumber": 4,
+			"dateOfBirth": "1992-02-21",
+			"nationality": "England",
+			"contractUntil": "2019-06-30",
+			"marketValue": "15,000,000 €"
+        },
+		{
+			"id": 413,
+			"name": "Marcos Rojo",
+			"position": "Centre Back",
+			"jerseyNumber": 5,
+			"dateOfBirth": "1990-03-20",
+			"nationality": "Argentina",
+			"contractUntil": "2019-06-30",
+			"marketValue": "18,000,000 €"
+        },
+		{
+			"id": 414,
+			"name": "Chris Smalling",
+			"position": "Centre Back",
+			"jerseyNumber": 12,
+			"dateOfBirth": "1989-11-22",
+			"nationality": "England",
+			"contractUntil": "2019-06-30",
+			"marketValue": "14,000,000 €"
+        },
+		{
+			"id": 417,
+			"name": "Patrick McNair",
+			"position": "Centre Back",
+			"jerseyNumber": 33,
+			"dateOfBirth": "1995-04-27",
+			"nationality": "Northern Ireland",
+			"contractUntil": "2017-06-30",
+			"marketValue": "4,500,000 €"
+        },
+		{
+			"id": 418,
+			"name": "Luke Shaw",
+			"position": "Left-Back",
+			"jerseyNumber": 23,
+			"dateOfBirth": "1995-07-12",
+			"nationality": "England",
+			"contractUntil": "2018-06-30",
+			"marketValue": "21,000,000 €"
+        },
+
+	}

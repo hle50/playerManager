@@ -1,0 +1,37 @@
+<div ng-controller='mainCtrl'>
+	<div ng-if='playerService.hasInfo'>
+		<div class="page-header">
+			<h1 class="text-center">Player Information</h1>
+		</div>
+		<div class="container">
+			<div class="fullName">
+				<h3>Full Name</h3>
+				<h4 ng-bind="playerService.hasInfo.name"></h4>
+			</div>
+			<div class="fullName">
+				<h3>Position</h3>
+				<h4 ng-bind="playerService.hasInfo.position"></h4>
+			</div>
+			<div class="fullName">
+				<h3>Number</h3>
+				<h4 ng-bind="playerService.hasInfo.jerseyNumber"></h4>
+			</div>
+			<div class="fullName">
+				<h3>Date Of Birth</h3>
+				<h4 ng-bind="playerService.hasInfo.dateOfBirth | date:'dd-MM-yyyy'"></h4>
+			</div>
+			<div class="fullName">
+				<h3>Nationality</h3>
+				<h4 ng-bind="playerService.hasInfo.nationality"></h4>
+			</div>
+			<div class=" fullName ">
+				<h3>Contract expried date</h3>
+				<h4 ng-bind="playerService.hasInfo.contractUntil | date:'dd-MM-yyyy'"></h4>
+			</div>
+			<div class="fullName ">
+				<h3>Market Value</h3>
+				<h4 ng-bind="playerService.hasInfo.marketValue "></h4>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,16 @@
+.listPlayer {
+	border-bottom: 1px solid #bdc3c7;
+	line-height: 25px;
+	cursor: pointer;
+}
+.playerName {
+	font-weight: 600;
+	color: #7f8c8d;
+	font-size: 18px;
+}
+.playerValue {
+	color: #bdc3c7;
+}
+.gly-color {
+	color: #bdc3c7;
+}
