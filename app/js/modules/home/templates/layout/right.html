@@ -1,3 +1,32 @@
 <div ng-controller="rightCtrl">
-	right
+	<div ng-if='playerService.history'>
+		<div class="page-header">
+			<h3 class="text-center">Player History</h3>
+		</div>
+		<uib-accordion close-others="oneAtATime">
+			<uib-accordion-group ng-repeat='history in playerService.history' is-open="status.open">
+				<uib-accordion-heading>
+					{{history.name}}
+					<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+				</uib-accordion-heading>
+				<ul class="list-group">
+					<li class="list-group-item">
+						<span class="badge">{{history.minutes}}</span> Minutes on field
+					</li>
+					<li class="list-group-item">
+						<span class="badge">{{history.goals}}</span> Goal
+					</li>
+					<li class="list-group-item">
+						<span class="badge">{{history.red}}</span> Red Card
+					</li>
+					<li class="list-group-item">
+						<span class="badge">{{history.yellow}}</span> Yellow Card
+					</li>
+					<li class="list-group-item">
+						<uib-rating ng-model="history.rating" max="5" readonly="true"></uib-rating>
+					</li>
+				</ul>
+			</uib-accordion-group>
+		</uib-accordion>
+	</div>
 </div>

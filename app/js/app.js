@@ -1,5 +1,5 @@
 'use strict';
-var myapp = angular.module('myApp', ["ui.router", 'ngAnimate', 'toastr', 'playerService'])
+var myapp = angular.module('myApp', ["ui.router", 'ngAnimate', 'toastr', 'ui.bootstrap', 'playerService'])
 myapp.config(function ($stateProvider, $urlRouterProvider, toastrConfig) {
 
 	// For any unmatched url, send to /route1

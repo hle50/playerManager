@@ -25,7 +25,7 @@ module.controller('homeCtrl', function ($compile, $scope, $log, $templateRequest
 			},
 			{
 				type: 'right',
-				size: 200,
+				size: 300,
 				resizable: true,
 				style: pstyle,
 			},
