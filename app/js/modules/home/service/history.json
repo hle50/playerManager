@@ -1,0 +1,46 @@
+{
+	"_links": {
+		"self": {
+			"href": "http://api.football-data.org/v1/teams/66/players"
+		},
+		"team": {
+			"href": "http://api.football-data.org/v1/teams/66"
+		}
+	},
+	"count": 25,
+	"histories": [
+		{
+			"name": "AC Milan",
+			"minutes": "1200049",
+			"goals": "31",
+			"yellow": "5",
+			"red": "0",
+			"rating": "2"
+    	},
+		{
+			"name": "Chealse",
+			"minutes": "34444",
+			"goals": "3",
+			"yellow": "5",
+			"red": "4",
+			"rating": "5"
+    	},
+		{
+			"name": "Real marid",
+			"minutes": "1349",
+			"goals": "0",
+			"yellow": "7",
+			"red": "3",
+			"rating": "2"
+    	},
+		{
+			"name": "NewCastle",
+			"minutes": "1200",
+			"goals": "3",
+			"yellow": "5",
+			"red": "0",
+			"rating": "4"
+    	}
+
+  ]
+}
