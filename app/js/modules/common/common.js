@@ -16,12 +16,8 @@ coreModule.service('coreService', function ($http, $log, $q) {
 			}
 
 		}).success(function (data) {
-			// With the data succesfully returned, we can resolve promise and we can access it in controller
 			defered.resolve(data);
-
-		}).error(function () {
-			alert("error");
-			//let the function caller know the error
+		}).error(function (data) {
 			defered.reject(data);
 		});
 		return defered.promise;
