@@ -1,27 +1,21 @@
 'use strict'
-var coreModule = angular.module('coreModule', []);
-coreModule.service('coreService', function ($http, $log, $q) {
+var coreModule = angular.module('coreModule', ['config']);
+coreModule.service('coreService', function ($http, $log, $q,configService) {
     var self;
 	function CoreSerivce() {
         self = this;
-        self.url='http://api.football-data.org/v1/teams/';
+        self.url=configService.api;
 	}
-	CoreSerivce.prototype.getList = function (runtimeUrl) {
+	CoreSerivce.prototype.get = function (runtimeUrl) {
 		var defered = $q.defer();
 		$http({
 			method: 'GET',
 			url: self.url+runtimeUrl,
-            headers: {
-				'X-Auth-Token': 'bc58f428c5024405b10075b96dd02c66'
-			}
 
 		}).success(function (data) {
-			// With the data succesfully returned, we can resolve promise and we can access it in controller
 			defered.resolve(data);
 
-		}).error(function () {
-			alert("error");
-			//let the function caller know the error
+		}).error(function (data) {
 			defered.reject(data);
 		});
 		return defered.promise;
