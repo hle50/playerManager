@@ -10,6 +10,10 @@ myapp.config(function ($stateProvider, $urlRouterProvider, toastrConfig) {
 			url: "/home",
 			templateUrl: "./js/modules/home/templates/home.html"
 		})
+    	.state('binding', {
+			url: "/binding",
+			templateUrl: "./js/modules/binding/templates/binding.html"
+		});
 	angular.extend(toastrConfig, {
 		allowHtml: false,
 		closeButton: true,
