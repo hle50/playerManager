@@ -17,3 +17,12 @@
 .gly-color {
 	color: #bdc3c7;
 }
+#status .row{
+    line-height: 40px;
+}
+.progress{
+    background-color: #D8CECE;
+}
+.playerStatus{
+    padding-top: 12px;
+}

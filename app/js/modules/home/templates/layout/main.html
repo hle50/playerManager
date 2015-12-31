@@ -1,42 +1,97 @@
 <div ng-controller='mainCtrl'>
-	<div ng-if='playerService.hasInfo'>
-		<div class="page-header">
-			<h1 class="text-center">Player Information</h1>
-		</div>
-		<div class="container">
-			<div class="fullName">
-				<h3>Full Name</h3>
-				<h4 ng-bind="playerService.hasInfo.name"></h4>
-			</div>
-			<div class="fullName">
-				<h3>Position</h3>
-				<h4 ng-bind="playerService.hasInfo.position"></h4>
-			</div>
-			<div class="fullName">
-				<h3>Number</h3>
-				<h4 ng-bind="playerService.hasInfo.jerseyNumber"></h4>
-			</div>
-			<div class="fullName">
-				<h3>Date Of Birth</h3>
-				<h4 ng-bind="playerService.hasInfo.dateOfBirth"></h4>
-			</div>
-			<div class="fullName">
-				<h3>Nationality</h3>
-				<h4 ng-bind="playerService.hasInfo.nationality"></h4>
-			</div>
-			<div class=" fullName ">
-				<h3>Contract expried date</h3>
-				<h4 ng-bind="playerService.hasInfo.contractUntil | date:'dd-MM-yyyy'"></h4>
-			</div>
-			<div class="fullName ">
-				<h3>Market Value</h3>
-				<h4 ng-bind="playerService.hasInfo.marketValue "></h4>
-			</div>
-			<div>
-				<button ng-click="getHistory()" class="btn btn-green" type="button">View history</button>
-				<button class="btn btn-blue" type="button">View status</button>
+    <div class="page-header">
+        <h1 class="text-center">Player Information</h1>
+    </div>
+    <div class="container">
+        <div class='row'>
+            <div class='col-xs-3'>
+                <div ng-if='playerService.hasInfo'>
 
-			</div>
-		</div>
-	</div>
+                    <div class="container">
+                        <div class="fullName">
+                            <h3>Full Name</h3>
+                            <h4 ng-bind="playerService.hasInfo.name"></h4>
+                        </div>
+                        <div class="fullName">
+                            <h3>Position</h3>
+                            <h4 ng-bind="playerService.hasInfo.position"></h4>
+                        </div>
+                        <div class="fullName">
+                            <h3>Date Of Birth</h3>
+                            <h4 ng-bind="playerService.hasInfo.dateOfBirth"></h4>
+                        </div>
+                        <div class="fullName">
+                            <h3>Nationality</h3>
+                            <h4 ng-bind="playerService.hasInfo.nationality"></h4>
+                        </div>
+                        <div class="fullName ">
+                            <h3>Market Value</h3>
+                            <h4 ng-bind="playerService.hasInfo.marketValue "></h4>
+                        </div>
+                        <div>
+                           
+                            <button ng-click="toggle('status')" class="btn btn-blue" type="button">{{playerService.isShowStatus? 'Hide Status' : 'Show Status'}}</button>
+                            <button ng-click="toggle('history')" class="btn btn-green" type="button">{{playerService.isShowHistory? 'Hide History' : 'Show History'}}</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="status" ng-if='playerService.isShowStatus' class="col-xs-9">
+                <div class="row">
+                    <div class='col-xs-1'>Height</div>
+                    <div class='col-xs-3' ng-bind='playerService.detail.status.height'>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class='col-xs-1'>Weight</div>
+                    <div class='col-xs-3' ng-bind='playerService.detail.status.weight'></div>
+                </div>
+                <div class="row">
+                    <div class='col-xs-1'>Attack</div>
+                    <div class='col-xs-3 playerStatus'>
+                        <uib-progressbar type='success' value="playerService.detail.status.attack">{{playerService.detail.status.attack}}</uib-progressbar>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class='col-xs-1'>Balance</div>
+                    <div class='col-xs-3 playerStatus'>
+                        <uib-progressbar type='success' value="playerService.detail.status.balance">{{playerService.detail.status.balance}}</uib-progressbar>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class='col-xs-1'>Defence</div>
+                    <div class='col-xs-3 playerStatus'>
+                        <uib-progressbar type='success' value="playerService.detail.status.defence">{{playerService.detail.status.defence}}</uib-progressbar>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class='col-xs-1'>Header</div>
+                    <div class='col-xs-3 playerStatus'>
+                        <uib-progressbar type='success' value="playerService.detail.status.header">{{playerService.detail.status.header}}</uib-progressbar>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class='col-xs-1'>Attack</div>
+                    <div class='col-xs-3 playerStatus'>
+                        <uib-progressbar type='success' value="playerService.detail.status.attack">{{playerService.detail.status.attack}}</uib-progressbar>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class='col-xs-1'>Speed</div>
+                    <div class='col-xs-3'>
+                        <uib-progressbar type='success' value="playerService.detail.status.speed">               {{::playerService.detail.status.speed}}</uib-progressbar>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class='col-xs-1'>Shoot</div>
+                    <div class='col-xs-3 playerStatus'>
+                        <uib-progressbar type='success' value="playerService.detail.status.shoot">      {{playerService.detail.status.shoot}}</uib-progressbar>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>

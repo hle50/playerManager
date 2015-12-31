@@ -1,20 +1,20 @@
 <div ng-controller="rightCtrl">
-	<div ng-if='playerService.history'>
+	<div ng-if='playerService.isShowHistory'>
 		<div class="page-header">
 			<h3 class="text-center">Player History</h3>
 		</div>
 		<uib-accordion close-others="oneAtATime">
-			<uib-accordion-group ng-repeat='history in playerService.history' is-open="status.open">
+			<uib-accordion-group ng-repeat='history in playerService.detail.history' is-open="status.open">
 				<uib-accordion-heading>
-					{{history.name}}
+					{{history.clubName}}
 					<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
 				</uib-accordion-heading>
 				<ul class="list-group">
 					<li class="list-group-item">
-						<span class="badge">{{history.minutes}}</span> Minutes on field
+						<span class="badge">{{history.minute}}</span> Minutes on field
 					</li>
 					<li class="list-group-item">
-						<span class="badge">{{history.goals}}</span> Goal
+						<span class="badge">{{history.goal}}</span> Goal
 					</li>
 					<li class="list-group-item">
 						<span class="badge">{{history.red}}</span> Red Card

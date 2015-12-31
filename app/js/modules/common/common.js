@@ -6,11 +6,18 @@ coreModule.service('coreService', function ($http, $log, $q,configService) {
         self = this;
         self.url=configService.api;
 	}
-	CoreSerivce.prototype.get = function (runtimeUrl) {
+	CoreSerivce.prototype.get = function (resourceName, resourceType, resourceId) {
 		var defered = $q.defer();
+        var runtimeURL;
+        if(resourceId===null || resourceId==undefined){
+            runtimeURL = self.url + '/' + resourceName + '/' + resourceType;
+        }
+        else{
+            runtimeURL = self.url + '/' + resourceName + '/' + resourceType +'/' + resourceId;
+        }
 		$http({
 			method: 'GET',
-			url: self.url+runtimeUrl,
+			url: runtimeURL,
 
 		}).success(function (data) {
 			defered.resolve(data);

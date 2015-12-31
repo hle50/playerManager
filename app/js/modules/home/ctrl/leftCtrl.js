@@ -6,7 +6,7 @@ module.controller('leftCtrl', ['playerService', '$scope', '$log', 'toastr', func
 	$log.warn('leftCtrl init');
 	self.isLoading = true;
 
-	self.list = playerService.get('/meta').then(function (result) {
+	self.list = playerService.get('players', 'meta').then(function (result) {
 		self.isLoading = false;
 		toastr.success('Loading sucessfully');
 		$log.info(result);
@@ -16,7 +16,11 @@ module.controller('leftCtrl', ['playerService', '$scope', '$log', 'toastr', func
 		toastr.warning('Loading unsucessfully');
 	});
 
-	self.getDetail = function (player) {
-		playerService.hasInfo = player;
+	self.getDetail = function (_id) {
+		playerService.get('players','detail',_id).then(function (result){
+            $log.info(result);
+            playerService.detail = result;
+            playerService.hasInfo = result.details;
+        });
 	}
 }])

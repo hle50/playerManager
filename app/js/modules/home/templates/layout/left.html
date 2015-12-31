@@ -6,7 +6,7 @@
 		<img src="./img/loading.gif" />
 	</div>
 	<div ng-repeat="player in players" class="listPlayer">
-		<div ng-click="getDetail(player)" ng-bind="player.meta.name" class="playerName"></div>
+		<div ng-click="getDetail(player._id)" ng-bind="player.meta.name" class="playerName"></div>
 		<div>
 			<span ng-bind="player.meta.marketValue" class="playerValue"></span>
 			<span class="glyphicon glyphicon-eye-open pull-right gly-color" aria-hidden="true"></span>
