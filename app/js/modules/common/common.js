@@ -21,6 +21,10 @@ coreModule.service('coreService', function ($http, $log, $q,configService) {
 
 		}).success(function (data) {
 			defered.resolve(data);
+            if(resourceType == 'form'){
+                self.detail = data.details;
+            }
+                
 
 		}).error(function (data) {
 			defered.reject(data);
@@ -28,7 +32,31 @@ coreModule.service('coreService', function ($http, $log, $q,configService) {
 		return defered.promise;
 		$log.info(runtimeUrl);
 	}
+    	CoreSerivce.prototype.post = function (resourceName) {
+		var defered = $q.defer();
+        var runtimeURL = self.url + '/' + resourceName;
+       
+		$http({
+			method: 'POST',
+			url: runtimeURL,
+            data: self.detail,
+            header :{
+                 'Content-Type': 'application/json'
+            }
 
+		}).success(function (data) {
+			defered.resolve(data);
+            if(resourceType == 'form'){
+                self.detail = data.details;
+            }
+                
+
+		}).error(function (data) {
+			defered.reject(data);
+		});
+		return defered.promise;
+		$log.info(runtimeUrl);
+	}
 
 	return {
 		CoreSerivce: CoreSerivce

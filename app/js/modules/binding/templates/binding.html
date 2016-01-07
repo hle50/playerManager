@@ -1,21 +1,30 @@
 <h3>
     Player Information
 </h3>
-<div class="container">
-    <div class="form-group">
-        <label for="exampleInputEmail1">Player Name</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-    </div>
-    <div class="form-group">
-        <label for="exampleInputEmail1">Player Name</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-    </div>
-    <div class="form-group">
-        <label for="exampleInputEmail1">Player Name</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-    </div>
-    <div class="form-group">
-        <label for="exampleInputEmail1">Player Name</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+<div ng-controller="bindingCtrl" class="container">
+    <div class="col-xs-6 col-sm-offset-3 ">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Player Name</label>
+            <input ng-model="playerService.detail.name.$"  class="form-control"  placeholder="Player Name">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Position</label>
+            <input  ng-model="playerService.detail.position.$"  class="form-control"  placeholder="Position">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Date Of Birth</label>
+            <input  ng-model="playerService.detail.dateOfBirth.$" class="form-control"  placeholder="Date Of Birth">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Nationality</label>
+            <input  ng-model="playerService.detail.nationality.$"  class="form-control"  placeholder="Nationality">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Market Value</label>
+            <input  ng-model="playerService.detail.marketValue.$"  class="form-control"  placeholder="Market Value">
+        </div>
+        <div class="form-group">
+            <button ng-click="save()" type="button" class="btn btn-large btn-block btn-primary">Submit</button>
+        </div>
     </div>
 </div>

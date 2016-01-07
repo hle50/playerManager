@@ -6,7 +6,7 @@ module.controller('leftCtrl', ['playerService', '$scope', '$log', 'toastr', func
 	$log.warn('leftCtrl init');
 	self.isLoading = true;
 
-	self.list = playerService.get('players', 'meta').then(function (result) {
+	playerService.get('players', 'meta').then(function (result) {
 		self.isLoading = false;
 		toastr.success('Loading sucessfully');
 		$log.info(result);
